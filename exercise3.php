@@ -52,15 +52,15 @@
 
         if ( $convert <= 0){
             $remarks = "Freezing point";
-        } elseif ($convert <= 100 ){
+        } elseif ($convert >= 100 ){
             $remarks = "Boiling point";
-        } elseif ($convert <= 25 ){
+        } elseif ($convert >= 1 && $convert <= 25 ){
             $remarks = "cold";
-        } elseif ($convert <= 40 ){
+        } elseif ($convert >= 26 && $convert <= 40 ){
             $remarks = "warm";
-        } elseif ($convert <= 99 ){
+        } elseif ($convert >= 41 && $convert <= 99 ){
             $remarks = "hot";
-        }
+        } 
         
 
     // OUTPUT
