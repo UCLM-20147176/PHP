@@ -42,14 +42,30 @@
 
     <h1>Exercise 3</h1>
     <form action="">
-        Fahrenheit: <input type="text"> <button>Convert</button>
+        Fahrenheit: <input type="text" name = "cel"> <button>Convert</button>
     </form><br /><br />
     <?php
     // Do your code here
+        $cel = $_GET["cel"];
+        $convert = round(($cel - 32) * 5 / 9 , 2);
+        $remarks = 0;
+
+        if ( $convert <= 0){
+            $remarks = "Freezing point";
+        } elseif ($convert <= 100 ){
+            $remarks = "Boiling point";
+        } elseif ($convert <= 25 ){
+            $remarks = "cold";
+        } elseif ($convert <= 40 ){
+            $remarks = "warm";
+        } elseif ($convert <= 99 ){
+            $remarks = "hot";
+        }
+        
 
     // OUTPUT
-    echo "Celcius: <br />";
-    echo "Remarks: ";
+    echo "Celcius: $convert<br />";
+    echo "Remarks: $remarks";
     ?>
 </body>
 
