@@ -19,14 +19,19 @@
             
            $start = $_POST["start"];
            $end = $_POST["end"];
-            
+           $odd = 0;
+           $even = 0;
+           
+       /*    
+           for ($start = 0; $start % 2 ; $start++){
+                
 
-
-
+           }
+        */
         echo "Starting Number: $start<br><br>";
         echo "Finding Number:  $end<br><br>";
         echo "Odd Numbers: <br><br>";
-        echo "Even Numbers: <br><br>";
+        echo "Even Numbers: $even<br><br>";
         echo "Divisible by 3 Numbers: <br><br>";
         echo "Divisible by 4 Numbers: <br><br>";
         echo "List of Prime Numbers: <br><br>";
