@@ -21,13 +21,16 @@
            $end = $_POST["end"];
            $odd = 0;
            $even = 0;
-           
-       /*    
-           for ($start = 0; $start % 2 ; $start++){
-                
 
+         /*  
+           // Dimugana
+           for ($i = 0; $i <= $end ; $i++){
+                if( $i % 2 != 0){
+                   $even =  "$i";
+                }
            }
         */
+
         echo "Starting Number: $start<br><br>";
         echo "Finding Number:  $end<br><br>";
         echo "Odd Numbers: <br><br>";
