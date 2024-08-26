@@ -55,9 +55,71 @@
                 }
             }
 
-        echo "<br><br>Divisible by 3 Numbers: <br><br>";
-        echo "Divisible by 4 Numbers: <br><br>";
-        echo "List of Prime Numbers: <br><br>";
+        echo "<br><br>Divisible by 3 Numbers: ";
+            if($start <  $end){
+                for ($i = $start; $i <= $end ; $i++){
+                    if( $i % 3 == 0){
+                        echo " $i";
+                    }
+            }
+                } elseif ($start >  $end) {
+                    for($i = $start; $i > $end; $i--){
+                        if( $i % 3 == 0){
+                            echo " $i"; 
+                            
+                        }
+                    }
+                }
+
+        echo "<br><br>Divisible by 5 Numbers: ";
+            if($start <  $end){
+                for ($i = $start; $i <= $end ; $i++){
+                    if( $i % 5 == 0){
+                        echo " $i";
+                    }
+            }
+                } elseif ($start >  $end) {
+                    for($i = $start; $i > $end; $i--){
+                        if( $i % 5 == 0){
+                            echo " $i"; 
+                            
+                        }
+                    }
+                }
+
+        echo "<br><br>List of Prime Numbers: ";
+          
+        function prime($i){
+        if($i <= 1){
+            return false;
+        } if ($i <= 3){
+            return true;
+        } if($i % 2 === 0 || $i % 3 === 0){
+            return false;
+        }
+
+        for($j = 5; $j * $j <= $i; $j += 6){
+            if ($i % $j === 0 || $i % ($j + 2) === 0){
+                return false;
+            }
+        }
+        return true;
+        }
+
+        if($start <  $end){
+            for($i = $start; $i <= $end; $i++){
+                if(prime($i)){
+                echo " $i";
+                }
+            }
+        } elseif ($start >  $end) {
+            for($i = $start; $i > $end; $i--){
+                if(prime($i)){
+                echo " $i";
+                }
+            }
+        }
+        
 
 
         ?>
