@@ -19,23 +19,43 @@
             
            $start = $_POST["start"];
            $end = $_POST["end"];
-           $odd = 0;
-           $even = 0;
-
-         /*  
-           // Dimugana
-           for ($i = 0; $i <= $end ; $i++){
-                if( $i % 2 != 0){
-                   $even =  "$i";
-                }
-           }
-        */
+           
 
         echo "Starting Number: $start<br><br>";
-        echo "Finding Number:  $end<br><br>";
-        echo "Odd Numbers: <br><br>";
-        echo "Even Numbers: $even<br><br>";
-        echo "Divisible by 3 Numbers: <br><br>";
+        echo "Ending Number:  $end<br><br>";
+
+        echo "Odd Numbers:  ";
+            if($start <  $end){
+            for ($i = $start; $i <= $end ; $i++){
+                if( $i % 2 != 0){
+                    echo " $i";
+                }
+        } 
+            } elseif ($start >  $end){
+                for($i = $start; $i > $end; $i--){
+                    if( $i % 2 != 0){
+                        echo " $i";
+                    }
+                }
+            }
+    
+        echo "<br><br> Even Numbers: ";
+            if($start <  $end){
+            for ($i = $start; $i <= $end ; $i++){
+                if( $i % 2 == 0){
+                    echo " $i";
+                }
+        }
+            } elseif ($start >  $end) {
+                for($i = $start; $i > $end; $i--){
+                    if( $i % 2 == 0){
+                        echo " $i"; 
+                        
+                    }
+                }
+            }
+
+        echo "<br><br>Divisible by 3 Numbers: <br><br>";
         echo "Divisible by 4 Numbers: <br><br>";
         echo "List of Prime Numbers: <br><br>";
 
