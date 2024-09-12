@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-        <h1>HUBERT</h1>
+
         <?php 
             $storage = array(
                 [
