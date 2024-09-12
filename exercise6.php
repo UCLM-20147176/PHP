@@ -3,68 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
 <body>
-    <?php
-        
-        $storage = array (
-            [
-                'Product' => 1,
-                'Name' => 'Laptop',
-                'Category' => 'Electronics',
-                'Stock' => '12',
-            ],
-            [
-                'Product' => 2,
-                'Name' => 'Shampoo',
-                'Category' => 'Cosmetics',
-                'Stock' => '50',
-            ],
-            [
-                'Product' => 3,
-                'Name' => 'Notebook',
-                'Category' => 'Stationary',
-                'Stock' => '30',
-            ],
-        );
+        <h1>HUBERT</h1>
+        <?php 
+            $storage = array(
+                [
+                    'Product' => 1,
+                    'Name' => 'Laptop',
+                    'Category' => 'Electronics',
+                    'Stock' => 12,
+                ],
+                [
+                    'Product' => 2,
+                    'Name' => 'Shampoo',
+                    'Category' => 'Cosmetics',
+                    'Stock' => 50,
+                ],
+                [
+                    'Product' => 3,
+                    'Name' => 'Notebook',
+                    'Category' => 'Stationary',
+                    'Stock' => 30,
+                ],
+
+            );
 
 
-        foreach ($storage as $store) {
-            echo "  " . $store['Name'] . " (Category: " . $store['Category'] . ") - Stock: " . $store['Stock'] . "<br>";
-        }
-        
+            echo "Initial Inventory :" . "<br>" ;
+            foreach($storage as $store){
+                echo $store['Name'];
+                echo "(Category: " . $store['Category'] . ")";
+                echo " -  Stock : " . $store['Stock'] . "<br>";              
+            };
 
-        // Adding a new [product]
-        $newProduct = [
-            'Product' => 4,
-            'Name' => 'Pen',
-            'Category' => 'Stationery',
-            'Stock' => '100',
-        ];
+            $newProduct = 
+                [
+                    'Product' => 4,
+                    'Name' => 'Pen',
+                    'Category' => 'Stationary',
+                    'Stock' => 100,
+                ];
+            
+            
+            $storage[] = $newProduct;
 
-        $storage[] = $newProduct;
-
-        $found = false;
-        foreach ($storage as $key => $store) {
-            if (ucwords($store['Product']) === 'Laptop') {
-                $storage[$key]['Stock'] = '20';
-                $found = true;
-                break;
+            echo "<br>Adding new product: ";            
+                echo $newProduct['Name'];
+                echo "(Category: " . $newProduct['Category'] . ")";
+                echo " -  Stock : " . $newProduct['Stock'] . "<br>";
+            
+            if($storage[0]['Name'] == 'Laptop'){
+                $storage[0]['Stock'] = 20;
+                echo "Updating stock for Laptop...<br>";
+            } elseif ($storage[0] !== 'Laptop') {
+                echo "The product is not found";
             }
-        }
-        if (!$found) {
-            echo "Error: Laptop not found.<br>";
-        }
+                       
+            echo "<br>Updating Products: <br>"; 
+            foreach($storage as $store){
+                echo $store['Name'];
+                echo "(Category: " . $store['Category'] . ")";
+                echo " -  Stock : " . $store['Stock'] . "<br>";
+            };
 
-        echo "<br>Updated Inventory:<br>";
-        foreach ($storage as $store) {
-            echo "  " . ucwords($store['Name']) . " (Category: " . ucwords($store['Category']) . ") - Stock: " . $store['Stock'] . "<br>";
-        }
+        ?>
 
-    ?>
-
-        
 
 </body>
 </html>
